@@ -1,13 +1,24 @@
-﻿using System;
+﻿using Models.Abstractions;
+using System;
 
 namespace Models
 {
-    public class Tenant
+    public class Tenant : BaseDomainEntity
     {
         #region Consturtor
-        public Tenant(Guid id, TenantConfiguration configuration)
+
+        /// <summary>
+        /// Ef pruposes only
+        /// </summary>
+        protected Tenant() { }
+
+        public Tenant(Guid id, string createdBy) : base(id, createdBy)
         {
-            Id = id;
+        }
+
+        
+        public Tenant(Guid id, string createdBy, TenantConfiguration configuration) : this(id, createdBy)
+        {
             Configuration = configuration;
         }
 
@@ -15,9 +26,7 @@ namespace Models
 
         #region Properties
 
-        public Guid Id { get; set; }
-
-        public TenantConfiguration Configuration {get}
+        public TenantConfiguration Configuration { get; }
 
         #endregion
     }
