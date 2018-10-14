@@ -1,5 +1,5 @@
 ﻿using Core.Data;
-using Core.Middlewares.Configuration;
+using Core.Middlewares.TenantCatching;
 using Core.Services;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,6 +12,8 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             services.AddScoped<ITenantHolder, TenantHolder>();
             services.AddScoped<ITenantCatchingStrategy, RouteTenantCatchingStrategy>();
+            services.AddScoped<ITenantCatchingStrategy, ClaimTenantCatchingStrategy>();
+            services.AddScoped<TenantCatchingList>(s=> new TenantCatchingList(s.GetServices<ITenantCatchingStrategy>()));
             services.AddDbContext<ITenancyDbContext, TenancyDbContext>(dbcontextBuild);
 
             return services;

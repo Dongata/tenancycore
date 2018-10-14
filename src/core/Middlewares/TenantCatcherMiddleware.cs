@@ -1,5 +1,5 @@
 ﻿using Core.Data;
-using Core.Middlewares.Configuration;
+using Core.Middlewares.TenantCatching;
 using Core.Services;
 using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
@@ -15,9 +15,13 @@ namespace Core.Middlewares
             _next = next;
         }
 
-        public async Task Invoke(HttpContext httpContext, ITenancyDbContext dbContext, ITenantHolder tenantHolder, ITenantCatchingStrategy tenantCachingStrategy)
+        public async Task Invoke(
+            HttpContext httpContext,
+            ITenancyDbContext dbContext,
+            ITenantHolder tenantHolder,
+            TenantCatchingList tenantCachingStrategies)
         {
-            var tenantId = tenantCachingStrategy.GetTenantId(httpContext);
+            var tenantId = tenantCachingStrategies.GetTenantId(httpContext);
 
             if (tenantId.HasValue)
             {

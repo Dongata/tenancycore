@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System;
 
-namespace Core.Middlewares.Configuration
+namespace Core.Middlewares.TenantCatching
 {
     /// <summary>
     /// Strategy for getting tenant's identifiers from a context

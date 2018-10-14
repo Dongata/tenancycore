@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System;
 
-namespace Core.Middlewares.Configuration
+namespace Core.Middlewares.TenantCatching
 {
     /// <summary>
     /// Gets the tenant id from a user claim

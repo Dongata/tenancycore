@@ -2,7 +2,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace Core.Middlewares.Configuration
+namespace Core.Middlewares.TenantCatching
 {
     public class RouteTenantCatchingStrategy : ITenantCatchingStrategy
     {
