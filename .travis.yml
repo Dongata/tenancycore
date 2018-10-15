@@ -1,7 +1,7 @@
 language: csharp
 solution: tenancycore.sln
 os: linux
-dotnet: "2.1.1"
+dotnet: "2.1.0"
 mono: none
 install: dotnet restore
 script:
