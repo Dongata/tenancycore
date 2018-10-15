@@ -1,0 +1,11 @@
+language: csharp
+solution: tenancycore.sln
+os: linux
+dotnet: "2.1.1"
+mono: none
+install: dotnet restore
+script:
+  - dotnet build --configuration release
+  - dotnet test core.tests/core.tests.csproj --configuration release
+  - dotnet test extensions.tests/Extensions.tests.csproj --configuration release
+  - dotnet test models.tests/models.tests.csproj --configuration release
