@@ -5,17 +5,17 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0EEFBBB3-A9B1-4E0D-B6A7-445C1C43AD4B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "src\core\Core.csproj", "{15274734-EF48-4098-A226-E519CE7369A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "src\core\core.csproj", "{15274734-EF48-4098-A226-E519CE7369A9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "src\models\Models.csproj", "{FAB8DC6F-8966-4E8E-8867-6943EC00814F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "src\models\models.csproj", "{FAB8DC6F-8966-4E8E-8867-6943EC00814F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions", "src\extensions\Extensions.csproj", "{6F557196-DD6E-4C8D-BFFE-51F8C9EF3608}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions", "src\extensions\extensions.csproj", "{6F557196-DD6E-4C8D-BFFE-51F8C9EF3608}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{87A43153-14F3-40EA-86B3-B4B14E7733E4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Tests", "tests\core.tests\Core.Tests.csproj", "{8398E0CD-492D-498F-A72D-70E42FC1A665}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Tests", "tests\core.tests\core.tests.csproj", "{8398E0CD-492D-498F-A72D-70E42FC1A665}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models.Tests", "tests\models.tests\Models.Tests.csproj", "{0BEC3109-9498-4FF1-845A-4D712A28CB56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models.Tests", "tests\models.tests\models.tests.csproj", "{0BEC3109-9498-4FF1-845A-4D712A28CB56}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "example", "example", "{EBE58FAE-3E7A-4F82-A599-FEF860E8019F}"
 EndProject
