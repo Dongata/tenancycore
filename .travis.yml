@@ -3,7 +3,12 @@ solution: tenancycore.sln
 os: linux
 dotnet: "2.1.1"
 mono: none
-install: dotnet restore
+install: 
+  - ls /home/travis/build/Dongata/tenancycore/src/
+  - ls /home/travis/build/Dongata/tenancycore/src/core/
+  - ls /home/travis/build/Dongata/tenancycore/src/models/
+  - ls /home/travis/build/Dongata/tenancycore/src/extensions/
+  - dotnet restore
 script:
   - dotnet build --configuration release
   - dotnet test core.tests/core.tests.csproj --configuration release
