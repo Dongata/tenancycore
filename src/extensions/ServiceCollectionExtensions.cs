@@ -1,20 +1,25 @@
-﻿using Core.Data;
-using Core.Middlewares.TenantCatching;
+﻿using Core.Middlewares.TenantCatching;
 using Core.Services;
-using Microsoft.EntityFrameworkCore;
+using Extensions.Builders;
 using System;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddTenancyCore(this IServiceCollection services, Action<DbContextOptionsBuilder> dbcontextBuild)
+		/// <summary>
+		/// Adds tenancy core services into default DI
+		/// </summary>
+		/// <param name="services">default service collection</param>
+		/// <param name="builder">Configurations for tenancy core</param>
+		/// <returns></returns>
+        public static IServiceCollection AddTenancyCore(this IServiceCollection services, Action<TenancyCoreServiceConfigBuilder> builder)
         {
+            builder.Invoke(new TenancyCoreServiceConfigBuilder(services));
+
+            //General settings
             services.AddScoped<ITenantHolder, TenantHolder>();
-            services.AddScoped<ITenantCatchingStrategy, RouteTenantCatchingStrategy>();
-            services.AddScoped<ITenantCatchingStrategy, ClaimTenantCatchingStrategy>();
-            services.AddScoped<TenantCatchingList>(s=> new TenantCatchingList(s.GetServices<ITenantCatchingStrategy>()));
-            services.AddDbContext<ITenancyDbContext, TenancyDbContext>(dbcontextBuild);
+            services.AddScoped(s => new TenantCatchingList(s.GetServices<ITenantCatchingStrategy>()));
 
             return services;
         }

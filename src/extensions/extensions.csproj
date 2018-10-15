@@ -9,10 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Builders\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\core\Core.csproj" />
   </ItemGroup>
 
